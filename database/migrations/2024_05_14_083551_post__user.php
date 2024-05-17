@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('Post_User', function (Blueprint $table) {
+        Schema::create('post_user', function (Blueprint $table) {
             $table->foreignId('user_id')->index();
             $table->foreign('user_id')->on('users')->references('id')->cascadeOnDelete();
             $table->foreignId('post_id')->index();
@@ -20,11 +20,11 @@ return new class extends Migration
         });
     }
 
-    /**
+    /**post_user
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('Post_User');
+        Schema::dropIfExists('post_user');
     }
 };
